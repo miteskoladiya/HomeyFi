@@ -17,14 +17,87 @@
     border-radius: 25px;
     padding: 0.5rem 3rem;
   }
+  .navbar-brand img {
+    height: 30px;
+    width: auto;
+    margin-right: 5px;
+  }
+  
+  /* Add responsive styles */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0.5rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.2rem;
+    }
+    
+    .navbar-collapse {
+      background-color: #fff;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .search-form {
+      order: 1;
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+    
+    .search-inp {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    
+    .search-btn {
+      width: 100%;
+    }
+    
+    .navbar-nav {
+      width: 100%;
+      text-align: center;
+      margin: 0 !important;
+      padding: 0.5rem 0;
+    }
+    
+    .nav-link {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .nav-link:last-child {
+      border-bottom: none;
+    }
+  
+    /* Fix for collapsible menu */
+    .collapse:not(.show) {
+      display: none !important;
+    }
+  
+    .collapse.show {
+      display: block !important;
+    }
+  }
 </style>
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/listings"><i class="fa-solid fa-hotel"></i><b>&nbsp;HomeyFi</b></a>
+      <a class="navbar-brand" href="/listings">
+        <img src="/images/logo.svg" alt="HomeyFi Logo">
+        <b>HomeyFi</b>
+      </a>
       <button class="navbar-toggler" 
         type="button" 
         data-bs-toggle="collapse" 
         data-bs-target="#navbarNavAltMarkup" 
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -33,7 +106,7 @@
           <a class="nav-link" href="/listings">Explore</a>
         </div>
         <div class="navbar-nav ms-auto">
-          <form class="d-flex">
+          <form class="d-flex search-form">
             <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations">
             <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
           </form>

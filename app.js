@@ -19,8 +19,8 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.model.js");
 
-const Mongo_url = "mongodb://127.0.0.1:27017/HomeyFi";
-//const dbUrl = process.env.ATLAS_DB;
+//const Mongo_url = "mongodb://127.0.0.1:27017/HomeyFi";
+const Mongo_url = process.env.ATLAS_DB;
 
 main()
     .then(() => {
