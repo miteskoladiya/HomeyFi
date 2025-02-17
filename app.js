@@ -94,6 +94,10 @@ app.use("/listings", listingRouter);
 app.use("/listings", reviewRouter);
 app.use("/", userRouter);
 
+app.get("/", (req, res) => {
+    res.render("landing.ejs");
+});
+
 
 app.all("*", (req, res, next) => {
     next(new ExError(404, "Page Not Found !!"));

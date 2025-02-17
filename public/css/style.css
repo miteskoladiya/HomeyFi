@@ -185,6 +185,34 @@ body{
       justify-content: center;
     }
   }
+
+  /* Add to public/css/style.css */
+
+/* Hide scrollbar but keep functionality */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Webkit browsers like Chrome/Safari */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* For the filters section specifically */
+#filters {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#filters::-webkit-scrollbar {
+  display: none;
+}
+
+/* Maintain smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
   
   /* Form responsiveness */
   @media (max-width: 768px) {
